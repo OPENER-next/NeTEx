@@ -2257,24 +2257,24 @@ Provides a general purose wrapper for NeTEx data content.</xsd:documentation>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
 		</xsd:key>
-		<!-- =====RetractableStepVehicleEquipment============================== -->
-		<!-- =====RetractableStepVehicleEquipment unique========================== -->
-		<xsd:unique name="RetractableStepVehicleEquipment_UniqueBy_Id_Version">
+		<!-- =====SlidingStepVehicleEquipment============================== -->
+		<!-- =====SlidingStepVehicleEquipment unique========================== -->
+		<xsd:unique name="SlidingStepVehicleEquipment_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [RetractableStepVehicleEquipment Id + Version] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [SlidingStepVehicleEquipment Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
-			<xsd:selector xpath=".//netex:RetractableStepVehicleEquipment"/>
+			<xsd:selector xpath=".//netex:SlidingStepVehicleEquipment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
 		</xsd:unique>
-		<!-- =====RetractableStepVehicleEquipment Key ========================== -->
-		<xsd:keyref name="RetractableStepVehicleEquipment_AnyKeyRef" refer="netex:RetractableStepVehicleEquipment_AnyVersionedKey">
-			<xsd:selector xpath=".//netex:RetractableStepVehicleEquipmentRef"/>
+		<!-- =====SlidingStepVehicleEquipment Key ========================== -->
+		<xsd:keyref name="SlidingStepVehicleEquipment_AnyKeyRef" refer="netex:SlidingStepVehicleEquipment_AnyVersionedKey">
+			<xsd:selector xpath=".//netex:SlidingStepVehicleEquipmentRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
 		</xsd:keyref>
-		<xsd:key name="RetractableStepVehicleEquipment_AnyVersionedKey">
-			<xsd:selector xpath=".//netex:RetractableStepVehicleEquipment"/>
+		<xsd:key name="SlidingStepVehicleEquipment_AnyVersionedKey">
+			<xsd:selector xpath=".//netex:SlidingStepVehicleEquipment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
 		</xsd:key>
