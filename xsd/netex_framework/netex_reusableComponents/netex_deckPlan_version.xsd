@@ -187,30 +187,10 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:element name="Deck" substitutionGroup="Zone">
+	<xsd:element name="Deck" type="Deck_VersionStructure" substitutionGroup="Zone">
 		<xsd:annotation>
 			<xsd:documentation>An area within a VEHICLE (i.e. bus, boat, coach, car, plane, etc.) or TRAIN ELEMENT made up of one or more DECK SPACEs. A subdivision of a DECK PLAN. +V2.0</xsd:documentation>
 		</xsd:annotation>
-		<xsd:complexType>
-			<xsd:complexContent>
-				<xsd:restriction base="Deck_VersionStructure">
-					<xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="EntityInVersionGroup" minOccurs="0"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DataManagedObjectGroup"/>
-						</xsd:sequence>
-						<xsd:group ref="DeckGroup"/>
-					</xsd:sequence>
-					<xsd:attribute name="id" type="DeckIdType">
-						<xsd:annotation>
-							<xsd:documentation>Identifier of VEHICLE EQUIPMENT PROFILE.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:attribute>
-				</xsd:restriction>
-			</xsd:complexContent>
-		</xsd:complexType>
 	</xsd:element>
 	<xsd:complexType name="Deck_VersionStructure">
 		<xsd:annotation>
@@ -449,49 +429,10 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:element name="PassengerSpace" substitutionGroup="DeckSpace_">
+	<xsd:element name="PassengerSpace" type="PassengerSpace_VersionStructure" substitutionGroup="DeckSpace_">
 		<xsd:annotation>
 			<xsd:documentation> A specialisation of DECK SPACE defining an area within a VEHICLE (i.e. bus, boat, coach, car) or TRAIN ELEMENT for use by passengers. +v2.0</xsd:documentation>
 		</xsd:annotation>
-		<xsd:complexType>
-			<xsd:complexContent>
-				<xsd:restriction base="PassengerSpace_VersionStructure">
-					<xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="EntityInVersionGroup" minOccurs="0"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DataManagedObjectGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="OnboardSpaceGroup">
-								<xsd:annotation>
-									<xsd:documentation>Elements for a ONBOARD SPACE.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:group>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DeckComponentGroup">
-								<xsd:annotation>
-									<xsd:documentation>Elements for a PASSENGER CARRYING REQUIREMENT TYPE.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:group>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DeckSpaceGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="PassengerSpaceGroup"/>
-						</xsd:sequence>
-					</xsd:sequence>
-					<xsd:attribute name="id" type="PassengerSpaceIdType" use="optional">
-						<xsd:annotation>
-							<xsd:documentation>Identifier of PASSENGER SPACE.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:attribute>
-				</xsd:restriction>
-			</xsd:complexContent>
-		</xsd:complexType>
 	</xsd:element>
 	<xsd:complexType name="PassengerSpace_VersionStructure">
 		<xsd:annotation>
@@ -556,49 +497,10 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:element name="OtherDeckSpace" substitutionGroup="DeckSpace_">
+	<xsd:element name="OtherDeckSpace" type="OtherDeckSpace_VersionStructure" substitutionGroup="DeckSpace_">
 		<xsd:annotation>
 			<xsd:documentation>A specialisation of DECK SPACE defining an area within a VEHICLE (i.e. bus, boat, coach, car) or TRAIN ELEMENT for restricted use, such as a crew area. +v2.0</xsd:documentation>
 		</xsd:annotation>
-		<xsd:complexType>
-			<xsd:complexContent>
-				<xsd:restriction base="OtherDeckSpace_VersionStructure">
-					<xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="EntityInVersionGroup" minOccurs="0"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DataManagedObjectGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="OnboardSpaceGroup">
-								<xsd:annotation>
-									<xsd:documentation>Elements for a ONBOARD SPACE.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:group>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DeckComponentGroup">
-								<xsd:annotation>
-									<xsd:documentation>Elements for a PASSENGER CARRYING REQUIREMENT TYPE.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:group>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DeckSpaceGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="OtherDeckSpaceGroup"/>
-						</xsd:sequence>
-					</xsd:sequence>
-					<xsd:attribute name="id" type="OtherDeckSpaceIdType" use="optional">
-						<xsd:annotation>
-							<xsd:documentation>Identifier of OTHER DECK SPACE.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:attribute>
-				</xsd:restriction>
-			</xsd:complexContent>
-		</xsd:complexType>
 	</xsd:element>
 	<xsd:complexType name="OtherDeckSpace_VersionStructure">
 		<xsd:annotation>
@@ -619,11 +521,6 @@
 		<xsd:sequence/>
 	</xsd:group>
 	<!-- ====== DECK ENTRANCE =================================== -->
-	<xsd:element name="DeckEntrance_" type="DeckComponent_VersionStructure" abstract="true" substitutionGroup="DeckComponent">
-		<xsd:annotation>
-			<xsd:documentation>Dummy type to work around SG limitations</xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
 	<xsd:complexType name="deckEntrances_RelStructure">
 		<xsd:annotation>
 			<xsd:documentation>Type for a list of DECK ENTRANCEs.</xsd:documentation>
@@ -632,51 +529,15 @@
 			<xsd:extension base="containmentAggregationStructure">
 				<xsd:choice maxOccurs="unbounded">
 					<xsd:element ref="DeckEntranceRef"/>
-					<xsd:element ref="DeckEntrance_"/>
+					<xsd:element ref="DeckEntrance"/>
 				</xsd:choice>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:element name="DeckEntrance" abstract="true" substitutionGroup="DeckComponent">
+	<xsd:element name="DeckEntrance" type="DeckEntrance_VersionStructure" abstract="true" substitutionGroup="DeckComponent">
 		<xsd:annotation>
 			<xsd:documentation>An entrance to or within a DECK. +v2.0</xsd:documentation>
 		</xsd:annotation>
-		<xsd:complexType>
-			<xsd:complexContent>
-				<xsd:restriction base="DeckEntrance_VersionStructure">
-					<xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="EntityInVersionGroup" minOccurs="0"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DataManagedObjectGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="OnboardSpaceGroup">
-								<xsd:annotation>
-									<xsd:documentation>Elements for a ONBOARD SPACE.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:group>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DeckComponentGroup">
-								<xsd:annotation>
-									<xsd:documentation>Elements for a DECK COMPONENT.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:group>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DeckEntranceGroup"/>
-						</xsd:sequence>
-					</xsd:sequence>
-					<xsd:attribute name="id" type="DeckEntranceIdType" use="optional">
-						<xsd:annotation>
-							<xsd:documentation>Identifier of DECK ENTRANCE.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:attribute>
-				</xsd:restriction>
-			</xsd:complexContent>
-		</xsd:complexType>
 	</xsd:element>
 	<xsd:complexType name="DeckEntrance_VersionStructure" abstract="true">
 		<xsd:annotation>
@@ -753,7 +614,7 @@
 			</xsd:element>
 			<xsd:element name="HasDoor" type="xsd:boolean" minOccurs="0">
 				<xsd:annotation>
-					<xsd:documentation>Whether the door is automatic.</xsd:documentation>
+					<xsd:documentation>Whether the entrance has a door.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="IsAutomatic" type="xsd:boolean" minOccurs="0">
@@ -764,49 +625,10 @@
 		</xsd:sequence>
 	</xsd:group>
 	<!-- ====== PASSENGER  ENTRANCE =================================== -->
-	<xsd:element name="PassengerEntrance" substitutionGroup="DeckEntrance_">
+	<xsd:element name="PassengerEntrance" type="PassengerEntrance_VersionStructure" substitutionGroup="DeckEntrance">
 		<xsd:annotation>
 			<xsd:documentation> A normal entrance for passengers to or within a DECK. +v2.0</xsd:documentation>
 		</xsd:annotation>
-		<xsd:complexType>
-			<xsd:complexContent>
-				<xsd:restriction base="PassengerEntrance_VersionStructure">
-					<xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="EntityInVersionGroup" minOccurs="0"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DataManagedObjectGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="OnboardSpaceGroup">
-								<xsd:annotation>
-									<xsd:documentation>Elements for a ONBOARD SPACE.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:group>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DeckComponentGroup">
-								<xsd:annotation>
-									<xsd:documentation>Elements for a PASSENGER CARRYING REQUIREMENT TYPE.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:group>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DeckEntranceGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="PassengerEntranceGroup"/>
-						</xsd:sequence>
-					</xsd:sequence>
-					<xsd:attribute name="id" type="PassengerEntranceIdType" use="optional">
-						<xsd:annotation>
-							<xsd:documentation>Identifier of PASSENGER ENTRANCE.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:attribute>
-				</xsd:restriction>
-			</xsd:complexContent>
-		</xsd:complexType>
 	</xsd:element>
 	<xsd:complexType name="PassengerEntrance_VersionStructure">
 		<xsd:annotation>
@@ -827,49 +649,10 @@
 		<xsd:sequence/>
 	</xsd:group>
 	<!-- ====== DECK VEHICLE  ENTRANCE =================================== -->
-	<xsd:element name="DeckVehicleEntrance" substitutionGroup="DeckEntrance_">
+	<xsd:element name="DeckVehicleEntrance" type="DeckVehicleEntrance_VersionStructure" substitutionGroup="DeckEntrance">
 		<xsd:annotation>
 			<xsd:documentation>A normal entrance for passengers to or within a DECK. +v2.0</xsd:documentation>
 		</xsd:annotation>
-		<xsd:complexType>
-			<xsd:complexContent>
-				<xsd:restriction base="DeckVehicleEntrance_VersionStructure">
-					<xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="EntityInVersionGroup" minOccurs="0"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DataManagedObjectGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="OnboardSpaceGroup">
-								<xsd:annotation>
-									<xsd:documentation>Elements for a ONBOARD SPACE.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:group>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DeckComponentGroup">
-								<xsd:annotation>
-									<xsd:documentation>Elements for a PASSENGER CARRYING REQUIREMENT TYPE.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:group>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DeckEntranceGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DeckVehicleEntranceGroup"/>
-						</xsd:sequence>
-					</xsd:sequence>
-					<xsd:attribute name="id" type="DeckVehicleEntranceIdType" use="optional">
-						<xsd:annotation>
-							<xsd:documentation>Identifier of DECK VEHICLE ENTRANCE.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:attribute>
-				</xsd:restriction>
-			</xsd:complexContent>
-		</xsd:complexType>
 	</xsd:element>
 	<xsd:complexType name="DeckVehicleEntrance_VersionStructure">
 		<xsd:annotation>
@@ -901,49 +684,10 @@
 		</xsd:sequence>
 	</xsd:group>
 	<!-- ====== OTHER DECK ENTRANCE =================================== -->
-	<xsd:element name="OtherDeckEntrance" substitutionGroup="DeckEntrance_">
+	<xsd:element name="OtherDeckEntrance" type="OtherDeckEntrance_VersionStructure" substitutionGroup="DeckEntrance">
 		<xsd:annotation>
 			<xsd:documentation>An entrance to or within a DECK for use for other purposes than normal passenger access. E.g. crew, emergency exit, etc. +v2.0</xsd:documentation>
 		</xsd:annotation>
-		<xsd:complexType>
-			<xsd:complexContent>
-				<xsd:restriction base="OtherDeckEntrance_VersionStructure">
-					<xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="EntityInVersionGroup" minOccurs="0"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DataManagedObjectGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="OnboardSpaceGroup">
-								<xsd:annotation>
-									<xsd:documentation>Elements for a ONBOARD SPACE.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:group>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DeckComponentGroup">
-								<xsd:annotation>
-									<xsd:documentation>Elements for a PASSENGER CARRYING REQUIREMENT TYPE.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:group>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DeckEntranceGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="OtherDeckEntranceGroup"/>
-						</xsd:sequence>
-					</xsd:sequence>
-					<xsd:attribute name="id" type="OtherDeckEntranceIdType" use="optional">
-						<xsd:annotation>
-							<xsd:documentation>Identifier of OTHER DECK ENTRANCE.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:attribute>
-				</xsd:restriction>
-			</xsd:complexContent>
-		</xsd:complexType>
 	</xsd:element>
 	<xsd:complexType name="OtherDeckEntrance_VersionStructure">
 		<xsd:annotation>
@@ -1130,46 +874,10 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:element name="DeckWindow" substitutionGroup="DeckComponent">
+	<xsd:element name="DeckWindow" type="DeckWindow_VersionStructure" substitutionGroup="DeckComponent">
 		<xsd:annotation>
 			<xsd:documentation>A window onto a DECK SPACE. +v2.0</xsd:documentation>
 		</xsd:annotation>
-		<xsd:complexType>
-			<xsd:complexContent>
-				<xsd:restriction base="DeckWindow_VersionStructure">
-					<xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="EntityInVersionGroup" minOccurs="0"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DataManagedObjectGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="OnboardSpaceGroup">
-								<xsd:annotation>
-									<xsd:documentation>Elements for a ONBOARD SPACE.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:group>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DeckComponentGroup">
-								<xsd:annotation>
-									<xsd:documentation>Elements for a PASSENGER CARRYING REQUIREMENT TYPE.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:group>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DeckWindowGroup"/>
-						</xsd:sequence>
-					</xsd:sequence>
-					<xsd:attribute name="id" type="DeckWindowIdType" use="optional">
-						<xsd:annotation>
-							<xsd:documentation>Identifier of DECK WINDOW.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:attribute>
-				</xsd:restriction>
-			</xsd:complexContent>
-		</xsd:complexType>
 	</xsd:element>
 	<xsd:complexType name="DeckWindow_VersionStructure">
 		<xsd:annotation>
